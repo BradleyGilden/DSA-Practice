@@ -42,11 +42,13 @@ class LinkedList:
         new = Node(data)
         new.next = self.head
         self.head = new
+        return
 
     def add_end(self, data):
         new = Node(data)
         if self.head is None:
-            return None
+            LinkedList.add_beginning(self, data)
+            return
 
         ptr = self.head
         while ptr.next is not None:
@@ -73,3 +75,17 @@ class LinkedList:
                     new_node.next = temp
                 ptr = ptr.next
                 tracker += 1
+
+    def reverse(self):
+        if self.head is None:
+            return
+        prev = None
+        after = self.head
+
+        while self.head is not None:
+            after = self.head.next
+            self.head.next = prev
+            prev = self.head
+            self.head = after
+
+        self.head = prev
