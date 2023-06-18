@@ -20,7 +20,7 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
-    
+
     def count_nodes(self):
         count = 0
         ptr = self.head
@@ -53,11 +53,11 @@ class LinkedList:
             ptr = ptr.next
         ptr.next = new
 
-    def add_pos(self, data, pos = 0):
+    def add_pos(self, data, pos=0):
         len = LinkedList.count_nodes(self)
         tracker = 1
         ptr = self.head
-        
+
         if self.head is None or pos == 0:
             LinkedList.add_beginning(self, data)
             return
@@ -73,4 +73,3 @@ class LinkedList:
                     new_node.next = temp
                 ptr = ptr.next
                 tracker += 1
-
