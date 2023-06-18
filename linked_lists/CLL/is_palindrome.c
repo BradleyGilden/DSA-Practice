@@ -1,12 +1,12 @@
-#include "lists.h"
+#include "main.h"
 
 /**
  * reverse - reverses linked list
  * @head: head node
  */
-void reverse(listint_t **head)
+void reverse(list_t **head)
 {
-	listint_t *after = NULL, *prev = NULL;
+	list_t *after = NULL, *prev = NULL;
 	int len = llen(*head);
 
 	if (len == 0 || len == 1)
@@ -28,7 +28,7 @@ void reverse(listint_t **head)
  * @head: head node of linked list
  * Return: length of linked list
  */
-int llen(listint_t *head)
+int llen(list_t *head)
 {
 	int len = 0;
 
@@ -45,9 +45,9 @@ int llen(listint_t *head)
  * @head: head node of linked list
  * Return: 1 if palindrome, 0 if not
  */
-int is_palindrome(listint_t **head)
+int is_palindrome(list_t **head)
 {
-	listint_t *ptr, *ptr2 = NULL, *temp;
+	list_t *ptr, *ptr2 = NULL, *temp;
 	int len;
 	int half, count = 1;
 
@@ -74,7 +74,7 @@ int is_palindrome(listint_t **head)
 	temp = ptr2;
 	while (ptr != NULL || temp != NULL)
 	{
-		if (ptr->n != temp->n)
+		if (ptr->age != temp->age)
 			return (0);
 		ptr = ptr->next;
 		temp = temp->next;

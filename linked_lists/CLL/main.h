@@ -27,4 +27,6 @@ void del_beg(list_t **head);
 void del_end(list_t *head);
 void del_pos(list_t **head, int pos);
 void reverse(list_t **head);
+int llen(list_t *head);
+void is_cyclic(list_t *head);
 #endif /*_MAIN_H_*/
