@@ -45,4 +45,12 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void free_tokens(char **tokarr);
+void free_alloced(globals_t *glob);
+void malloc_fail(char *line, globals_t *glob);
+void dmalloc_fail(char **tokarr, globals_t *glob);
+void checkargs(int ac);
+void checkstream(FILE *file, char *filename);
+char **get_tokens(globals_t *glob);
+
 #endif /*_MONTY_H_*/
