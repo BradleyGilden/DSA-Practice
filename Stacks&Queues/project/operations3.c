@@ -71,6 +71,7 @@ void op_pchar(stack_t **head, unsigned int line_number)
 void op_pstr(stack_t **head, unsigned int line_number)
 {
     stack_t *ptr;
+    (void)line_number;
 
     if (head == NULL || *head == NULL)
     {
