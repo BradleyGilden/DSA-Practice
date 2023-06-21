@@ -4,7 +4,7 @@ void free_tokens(char **tokarr)
 {
 	int i = 0, len = 0;
 
-	if (tokarr == NULL)
+	if (tokarr == NULL || *tokarr == NULL)
 		return;
 
 	while (tokarr[i++])

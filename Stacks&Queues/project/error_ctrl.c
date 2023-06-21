@@ -41,9 +41,11 @@ void checkstream(FILE *file, char *filename)
 	}
 }
 
-void validate_opcode(globals_t *glob)
+void validate_opcode(globals_t *glob, stack_t *stack)
 {
 	int i = 0;
+	int value = 0;
+	int compare = 0;
 	char *opcodes[9] = {"push", "pull", "pall",
 						"pint", "add", "pop",
 						"swap", "add", "nop"};
@@ -51,7 +53,23 @@ void validate_opcode(globals_t *glob)
 	for (i = 0; i < 9; i++)
 	{
 		if (strcmp(optokens[0], opcodes[i]) == 0)
+		{
+			if (glob->count == 2)
+			{
+				value =_isdigit(optokens[1]);
+				compare = strcmp("push", optokens[0]);
+				if (value == 0 && compare == 0 ||
+				glob->count == 1 && compare == 0)
+				{
+					fprintf(stderr, "L%d: usage: push integer\n", glob->l_num);
+					free_list(stack);
+					free_alloced(glob);
+					fclose(glob->file);
+					exit(EXIT_FAILURE);
+				}
+			}
 			return;
+		}
 	}
 
 	fprintf(stderr, "L%d: unknown instruction %s\n", glob->l_num, optokens[0]);

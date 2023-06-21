@@ -12,6 +12,8 @@ char **optokens = NULL;
 int main(int argc, char *argv[])
 {
 	globals_t glob = {NULL, NULL, NULL, NULL, 0, 0};
+	stack_t *stack = NULL;
+	void (*functions)(stack_t **, unsigned int);
 	char *filename;
 	size_t n = 0;
 	ssize_t ret = 0;
@@ -29,14 +31,16 @@ int main(int argc, char *argv[])
 		if (optokens == NULL)
 			continue;
 		glob.l_num += 1;
-		validate_opcode(&glob);
-		if (glob.count == 2)
-			printf("%s    %s\n", optokens[0], optokens[1]);
-		else if(glob.count == 1)
-			printf("%s\n", optokens[0]);
+		validate_opcode(&glob, stack);
+		functions = get_ops(optokens[0]);
+		if(functions == NULL)
+			continue;
+		functions(&stack, glob.l_num);
 		free_alloced(&glob);
 	}
 	if (glob.line != NULL)
 		free(glob.line);
+	if (stack != NULL)
+		free_list(stack);
 	fclose(glob.file);
 }
