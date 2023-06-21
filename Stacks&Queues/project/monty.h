@@ -7,14 +7,6 @@
 
 extern char **optokens;
 
-typedef struct globals
-{
-	char **tokarr;
-	char *line;
-	char *copy;
-	int count;
-} globals_t;
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -45,6 +37,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+typedef struct globals
+{
+	char **tokarr;
+	char *line;
+	char *copy;
+	int count;
+	int l_num;
+} globals_t;
+
+
 void free_tokens(char **tokarr);
 void free_alloced(globals_t *glob);
 void malloc_fail(char *line, globals_t *glob);
@@ -52,5 +55,6 @@ void dmalloc_fail(char **tokarr, globals_t *glob);
 void checkargs(int ac);
 void checkstream(FILE *file, char *filename);
 char **get_tokens(globals_t *glob);
+void validate_opcode(globals_t *glob, FILE *file);
 
 #endif /*_MONTY_H_*/

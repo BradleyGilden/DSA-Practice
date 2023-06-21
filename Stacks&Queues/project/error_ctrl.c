@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdlib.h>
 
 void malloc_fail(char *line, globals_t *glob)
 {
@@ -36,4 +37,23 @@ void checkstream(FILE *file, char *filename)
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
+}
+
+void validate_opcode(globals_t *glob, FILE *file)
+{
+	int i = 0;
+	char *opcodes[9] = {"push", "pull", "pall",
+						"pint", "add", "pop",
+						"swap", "add", "nop"};
+
+	for (i = 0; i < 9; i++)
+	{
+		if (strcmp(optokens[0], opcodes[i]) == 0)
+			return;
+	}
+
+	fprintf(stderr, "L%d: unknown instruction %s\n", glob->l_num, optokens[0]);
+	free_alloced(glob);
+	fclose(file);
+	exit(EXIT_FAILURE);
 }
