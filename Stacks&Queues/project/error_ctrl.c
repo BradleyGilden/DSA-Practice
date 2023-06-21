@@ -44,10 +44,11 @@ void checkstream(FILE *file, char *filename)
 void validate_opcode(globals_t *glob, stack_t *stack)
 {
 	int i = 0, value = 0, compare = 0;
-	char *opcodes[13] = {"push", "pull", "pall", "pint", "add", "pop", "swap",
-						"add", "nop", "sub", "div", "mul", "mod"};
+	char *opcodes[15] = {"push", "pull", "pall", "pint", "add", "pop", "swap",
+						"add", "nop", "sub", "div", "mul", "mod", "pchar",
+						"pstr"};
 
-	for (i = 0; i < 13; i++)
+	for (i = 0; i < 15; i++)
 	{
 		if (strcmp(optokens[0], opcodes[i]) == 0)
 		{

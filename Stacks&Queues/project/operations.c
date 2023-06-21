@@ -15,6 +15,8 @@ void (*get_ops(char *opcode))(stack_t **stack, unsigned int line_number)
         {"div", op_div},
         {"mul", op_mul},
         {"mod", op_mod},
+        {"pchar", op_pchar},
+        {"pstr", op_pstr},
 		{NULL, NULL}
 	};
 
