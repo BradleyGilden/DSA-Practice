@@ -11,19 +11,17 @@ char **optokens = NULL;
 
 int main(int argc, char *argv[])
 {
-	globals_t glob = {NULL, NULL, NULL, 0, 0};
+	globals_t glob = {NULL, NULL, NULL, NULL, 0, 0};
 	char *filename;
 	size_t n = 0;
 	ssize_t ret = 0;
 
 	checkargs(argc);
 	filename = argv[1];
+	glob.file = fopen(filename, "r");
+	checkstream(glob.file, filename);
 
-	FILE *file = fopen(filename, "r");
-
-	checkstream(file, filename);
-
-	while ((ret = getline(&(glob.line), &n, file)) >= 0)
+	while ((ret = getline(&(glob.line), &n, glob.file)) >= 0)
 	{
 		if (ret == 0)
 			continue;
@@ -31,7 +29,7 @@ int main(int argc, char *argv[])
 		if (optokens == NULL)
 			continue;
 		glob.l_num += 1;
-		validate_opcode(&glob, file);
+		validate_opcode(&glob);
 		if (glob.count == 2)
 			printf("%s    %s\n", optokens[0], optokens[1]);
 		else if(glob.count == 1)
@@ -40,5 +38,5 @@ int main(int argc, char *argv[])
 	}
 	if (glob.line != NULL)
 		free(glob.line);
-	fclose(file);
+	fclose(glob.file);
 }

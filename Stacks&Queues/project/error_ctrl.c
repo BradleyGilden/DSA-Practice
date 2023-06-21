@@ -7,6 +7,7 @@ void malloc_fail(char *line, globals_t *glob)
 	{
 		free_alloced(glob);
 		fprintf(stderr, "Error: malloc failed\n");
+		fclose(glob->file);
 		exit(EXIT_FAILURE);
 	}
 	
@@ -18,6 +19,7 @@ void dmalloc_fail(char **tokarr, globals_t *glob)
 	{
 		free_alloced(glob);
 		fprintf(stderr, "Error: malloc failed\n");
+		fclose(glob->file);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -39,7 +41,7 @@ void checkstream(FILE *file, char *filename)
 	}
 }
 
-void validate_opcode(globals_t *glob, FILE *file)
+void validate_opcode(globals_t *glob)
 {
 	int i = 0;
 	char *opcodes[9] = {"push", "pull", "pall",
@@ -54,6 +56,6 @@ void validate_opcode(globals_t *glob, FILE *file)
 
 	fprintf(stderr, "L%d: unknown instruction %s\n", glob->l_num, optokens[0]);
 	free_alloced(glob);
-	fclose(file);
+	fclose(glob->file);
 	exit(EXIT_FAILURE);
 }

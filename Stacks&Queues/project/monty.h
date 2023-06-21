@@ -43,6 +43,7 @@ typedef struct globals
 	char **tokarr;
 	char *line;
 	char *copy;
+	FILE *file;
 	int count;
 	int l_num;
 } globals_t;
@@ -55,6 +56,6 @@ void dmalloc_fail(char **tokarr, globals_t *glob);
 void checkargs(int ac);
 void checkstream(FILE *file, char *filename);
 char **get_tokens(globals_t *glob);
-void validate_opcode(globals_t *glob, FILE *file);
+void validate_opcode(globals_t *glob);
 
 #endif /*_MONTY_H_*/
