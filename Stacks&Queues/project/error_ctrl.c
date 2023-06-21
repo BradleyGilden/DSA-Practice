@@ -43,30 +43,22 @@ void checkstream(FILE *file, char *filename)
 
 void validate_opcode(globals_t *glob, stack_t *stack)
 {
-	int i = 0;
-	int value = 0;
-	int compare = 0;
-	char *opcodes[9] = {"push", "pull", "pall",
-						"pint", "add", "pop",
-						"swap", "add", "nop"};
+	int i = 0, value = 0, compare = 0;
+	char *opcodes[13] = {"push", "pull", "pall", "pint", "add", "pop", "swap",
+						"add", "nop", "sub", "div", "mul", "mod"};
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 13; i++)
 	{
 		if (strcmp(optokens[0], opcodes[i]) == 0)
 		{
+			compare = strcmp("push", optokens[0]);
+			if (glob->count == 1 && compare == 0)
+				push_err(stack, glob);
 			if (glob->count == 2)
 			{
 				value =_isdigit(optokens[1]);
-				compare = strcmp("push", optokens[0]);
-				if (value == 0 && compare == 0 ||
-				glob->count == 1 && compare == 0)
-				{
-					fprintf(stderr, "L%d: usage: push integer\n", glob->l_num);
-					free_list(stack);
-					free_alloced(glob);
-					fclose(glob->file);
-					exit(EXIT_FAILURE);
-				}
+				if (value == 0 && compare == 0)
+					push_err(stack, glob);
 			}
 			return;
 		}

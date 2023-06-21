@@ -27,3 +27,12 @@ int _isdigit(char *str)
 
 	return (1);
 }
+
+void push_err(stack_t *stack, globals_t *glob)
+{
+    fprintf(stderr, "L%d: usage: push integer\n", glob->l_num);
+	free_list(stack);
+	free_alloced(glob);
+	fclose(glob->file);
+	exit(EXIT_FAILURE);
+}

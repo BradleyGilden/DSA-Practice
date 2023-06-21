@@ -52,17 +52,29 @@ typedef struct globals
 void free_tokens(char **tokarr);
 void free_alloced(globals_t *glob);
 void malloc_fail(char *line, globals_t *glob);
+void push_err(stack_t *stack, globals_t *glob);
 void dmalloc_fail(char **tokarr, globals_t *glob);
 void checkargs(int ac);
 void checkstream(FILE *file, char *filename);
+
+
 char **get_tokens(globals_t *glob);
 void validate_opcode(globals_t *glob, stack_t *stack);
 int _isdigit(char *str);
+
 void (*get_ops(char *opcode))(stack_t **stack, unsigned int line_number);
 void op_push(stack_t **head, unsigned int line_number);
 void op_pall(stack_t **head, unsigned int line_number);
 void op_pint(stack_t **head, unsigned int line_number);
 void op_pop(stack_t **head, unsigned int line_number);
+void op_swap(stack_t **head, unsigned int line_number);
+void op_add(stack_t **head, unsigned int line_number);
+void op_nop(stack_t **head, unsigned int line_number);
+void op_sub(stack_t **head, unsigned int line_number);
+void op_div(stack_t **head, unsigned int line_number);
+void op_mul(stack_t **head, unsigned int line_number);
+void op_mod(stack_t **head, unsigned int line_number);
+
 void free_list(stack_t *head);
 
 #endif /*_MONTY_H_*/
