@@ -24,7 +24,7 @@ void op_rotl(stack_t **head, unsigned int line_number)
 
 void op_rotr(stack_t **head, unsigned int line_number)
 {
-	stack_t *end = NULL, *second = NULL;
+	stack_t *end = NULL, *second = NULL, *second_l = NULL;
 	int len = 0;
 	(void)line_number;
 
@@ -42,9 +42,16 @@ void op_rotr(stack_t **head, unsigned int line_number)
 	len++;
 
 	if (len == 2)
+	{
 		op_swap(head, 0);
-
-	end->prev->next = *head;   // 2->0
-	end->next = (*head)->prev; // 1->9
-	(*head)->prev->prev = end // 1<-9
+		return;
+	}
+	second_l = end->prev;
+	second_l->next = *head;
+	(*head)->prev = second_l;
+	(*head)->next = NULL;
+	end->next = second;
+	end->prev = NULL;
+	second->prev = end;
+	*head = end;
 }

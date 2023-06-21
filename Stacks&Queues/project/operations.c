@@ -18,6 +18,7 @@ void (*get_ops(char *opcode))(stack_t **stack, unsigned int line_number)
         {"pchar", op_pchar},
         {"pstr", op_pstr},
 		{"rotl", op_rotl},
+		{"rotr", op_rotr},
 		{NULL, NULL}
 	};
 
@@ -37,7 +38,6 @@ void op_push(stack_t **head, unsigned int line_number)
 
 	if (new_node == NULL)
 	{
-        free_list(*head);
         free_tokens(optokens);
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);

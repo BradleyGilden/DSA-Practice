@@ -25,15 +25,15 @@ int main(int argc, char *argv[])
 
 	while ((ret = getline(&(glob.line), &n, glob.file)) >= 0)
 	{
+		glob.l_num += 1;
 		if (ret == 0)
 			continue;
 		optokens = get_tokens(&glob);
 		if (optokens == NULL)
 			continue;
-		glob.l_num += 1;
 		validate_opcode(&glob, stack);
 		functions = get_ops(optokens[0]);
-		if(functions == NULL)
+		if (functions == NULL)
 			continue;
 		functions(&stack, glob.l_num);
 		free_alloced(&glob);

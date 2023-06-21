@@ -37,7 +37,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+/**
+ * struct globals - stores commonly used variables in the program
+ * @tokarr: points to the array of tokens stored
+ * @line: stores the raw line of operation commands
+ * @copy: stores a copy of the line
+ * @file: file pointer to opened file
+ * @count: counts the number of tokens per line
+ * @l_num: stores the line number
+ */
 typedef struct globals
 {
 	char **tokarr;
@@ -77,6 +85,7 @@ void op_mod(stack_t **head, unsigned int line_number);
 void op_pchar(stack_t **head, unsigned int line_number);
 void op_pstr(stack_t **head, unsigned int line_number);
 void op_rotl(stack_t **head, unsigned int line_number);
+void op_rotr(stack_t **head, unsigned int line_number);
 
 void free_list(stack_t *head);
 
