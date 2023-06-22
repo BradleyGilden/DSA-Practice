@@ -43,4 +43,5 @@ int main(int argc, char *argv[])
 	if (stack != NULL)
 		free_list(stack);
 	fclose(glob.file);
+	return (0);
 }

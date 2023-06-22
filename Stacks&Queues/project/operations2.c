@@ -1,6 +1,11 @@
 #include "monty.h"
 #include <stdlib.h>
 
+/**
+ * op_pop - removes node from the top of the stack
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *temp;
@@ -19,6 +24,11 @@ void op_pop(stack_t **head, unsigned int line_number)
 		(*head)->prev = NULL;
 }
 
+/**
+ * op_swap - swaps first two elements of the stack
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_swap(stack_t **head, unsigned int line_number)
 {
 	stack_t *second_node = NULL;
@@ -30,7 +40,7 @@ void op_swap(stack_t **head, unsigned int line_number)
 		free(optokens);
 		exit(EXIT_FAILURE);
 	}
-	
+
 	second_node = (*head)->next;
 	if (second_node->next != NULL)
 		third_node = second_node->next;
@@ -44,6 +54,12 @@ void op_swap(stack_t **head, unsigned int line_number)
 
 }
 
+/**
+ * op_add - adds top two elements of the stack, stores the result in the...
+ *          second elements and pops the first element
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_add(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
@@ -57,12 +73,23 @@ void op_add(stack_t **head, unsigned int line_number)
 	op_pop(head, line_number);
 }
 
+/**
+ * op_nop - does nothing
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_nop(stack_t **head, unsigned int line_number)
 {
 	(void)head;
 	(void)line_number;
 }
 
+/**
+ * op_sub - subtracts the top two elements of the stack, stores the result in
+ *          the second element and pops the first element
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_sub(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL || (*head)->next == NULL)

@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * op_rotl - places top element of stack to the bottom
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_rotl(stack_t **head, unsigned int line_number)
 {
 	stack_t *end = NULL, *second = NULL;
@@ -22,6 +27,11 @@ void op_rotl(stack_t **head, unsigned int line_number)
 	*head = second;
 }
 
+/**
+ * op_rotr - swaps top and last element of the stack
+ * @head: pointer to the top of the stack
+ * @line_number: line number at which an opcode is executed
+ */
 void op_rotr(stack_t **head, unsigned int line_number)
 {
 	stack_t *end = NULL, *second = NULL, *second_l = NULL;

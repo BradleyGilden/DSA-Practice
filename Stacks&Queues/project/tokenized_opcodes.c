@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * get_tokens - tokenizes opcodes and their values
+ * @glob: list of global attributes
+ * Return: pointer to tokenized array or NULL if failed
+ */
 char **get_tokens(globals_t *glob)
 {
 	char *delim = "\v\t\n ";
