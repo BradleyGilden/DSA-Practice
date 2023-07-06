@@ -1,3 +1,5 @@
+# DJB2 Algorithm
+
 The djb2 algorithm is a popular hash function created by Daniel J. Bernstein. It is widely used in hash table implementations due to its simplicity and effectiveness in generating relatively uniform hash codes.
 
 Here is the pseudocode for the djb2 algorithm:
