@@ -23,3 +23,13 @@ Hashtables (also known as hash maps) is a data structure that provides efficient
 * When retrieving a value from a hash table, the key is hashed again to determine the corresponding index. The hash table then follows the linked list (or any other data structure) at that index to find the desired value
 
 * In the best-case scenario, with a good hash function and minimal collisions, the retrieval time is constant, O(1). However, in the worst-case scenario, with many collisions, the retrieval time can approach O(n), where n is the total number of key-value pairs.
+
+## Summary
+
+* used to index large amounts of data
+
+* address of each key is calculated using the key itself
+
+* collisions resolved with open or closed addressing
+
+* hashing is widely used in database indexing, compilers, caching, password authentication, and more.
