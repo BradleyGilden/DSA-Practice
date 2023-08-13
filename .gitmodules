@@ -1,3 +1,6 @@
 [submodule "Sorting_Algorithms"]
 	path = Sorting_Algorithms
 	url = git@github.com:BradleyGilden/sorting_algorithms.git
+[submodule "Stacks&Queues/Monty_Application"]
+	path = Stacks&Queues/Monty_Application
+	url = git@github.com:BradleyGilden/monty.git
