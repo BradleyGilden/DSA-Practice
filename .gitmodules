@@ -1,0 +1,3 @@
+[submodule "Sorting_Algorithms"]
+	path = Sorting_Algorithms
+	url = git@github.com:BradleyGilden/sorting_algorithms.git
