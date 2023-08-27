@@ -16,7 +16,7 @@ A binary tree is a non linear data structure. It consists of nodes, where each n
 
 6. **Internal Node**: An internal node is a node that has at least one child. In other words, it's not a leaf node.
 
-7. **Depth**: The depth of a node is the length of the path from the root to that node. The root node has a depth of 0.
+7. **Depth**: The depth of a node is the length of the path from the root to that node. The root node has a depth of 0. The level of a node also equates to the depth of the node.
 
 8. **Height**: The height of a binary tree is the length of the longest path from the root to a leaf node. Alternatively, it's the maximum depth of any node in the tree.
 
@@ -29,3 +29,14 @@ A binary tree is a non linear data structure. It consists of nodes, where each n
 12. **Traversal**: Binary trees can be traversed in various ways, such as in-order (left subtree, root, right subtree), pre-order (root, left subtree, right subtree), and post-order (left subtree, right subtree, root) traversals.
 
 13. **Binary Search Tree (BST)**: A special type of binary tree where each node's left child has a value less than its own value, and its right child has a value greater than its own value. This property allows for efficient searching, insertion, and deletion of elements.
+
+14. **Max|Min nodes and height**:
+    * max no. of nodes possible at any level 'l' is = 2^l (this node count is only for that specific level)
+
+    <br>
+
+    | Tree Type            | Maximum Nodes | Minimum Nodes | Maximum Height | Minimum Height  |
+    |----------------------|---------------|---------------|----------------|-----------------|
+    | Binary Tree          | 2^(h+1) - 1   | h + 1         | n - 1          | log2(n + 1) - 1 |
+    | Full Binary Tree     | 2^(h+1) - 1   | 2h + 1        | (n-1)/2        | log2(n + 1) - 1 |
+    | Complete Binary Tree | 2^(h+1) - 1   | 2^h           | logn           | log2(n + 1) - 1 |
