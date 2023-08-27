@@ -1,6 +1,8 @@
 #ifndef BTHEADER_H
 #define BTHEADER_H
 
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * node_s - structure of a Binary Tree node represented by doubly linkable node
@@ -15,5 +17,7 @@ typedef struct node_s
     struct node_s *left, *right;
 } node;
 
+node *create(void);
+void pre_order(node *root);
 
 #endif /*BTHEADER_H*/
