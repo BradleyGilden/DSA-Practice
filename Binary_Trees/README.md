@@ -30,7 +30,8 @@ A binary tree is a non linear data structure. It consists of nodes, where each n
 
 13. **Binary Search Tree (BST)**: A special type of binary tree where each node's left child has a value less than its own value, and its right child has a value greater than its own value. This property allows for efficient searching, insertion, and deletion of elements.
 
-14. **Max|Min nodes and height**:
+## Max|Min nodes and height:
+
     * max no. of nodes possible at any level 'l' is = 2^l (this node count is only for that specific level)
 
     <br>
@@ -40,3 +41,9 @@ A binary tree is a non linear data structure. It consists of nodes, where each n
     | Binary Tree          | 2^(h+1) - 1   | h + 1         | n - 1          | log2(n + 1) - 1 |
     | Full Binary Tree     | 2^(h+1) - 1   | 2h + 1        | (n-1)/2        | log2(n + 1) - 1 |
     | Complete Binary Tree | 2^(h+1) - 1   | 2^h           | logn           | log2(n + 1) - 1 |
+
+## Traversals:
+
+* Inorder: Left, Root, Right
+* Pre-order: Root, Left, Right
+* Post-order: Left, Right, Root
