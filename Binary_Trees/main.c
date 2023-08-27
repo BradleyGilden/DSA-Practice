@@ -12,4 +12,6 @@ int main(void)
     root = create();
     printf("Pre-order is: ");
     pre_order(root);
+    printf("\n");
+    return (0);
 }
