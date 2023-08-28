@@ -13,8 +13,10 @@ int main(void)
     printf("Pre-order is: ");
     pre_order(root);
     printf("\n");
+    printf("In-order is: ");
     in_order(root);
     printf("\n");
+    printf("post_order is: ");
     post_order(root);
     printf("\n");
     return (0);

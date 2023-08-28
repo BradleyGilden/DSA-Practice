@@ -11,7 +11,7 @@ node *create(void)
     node *new = malloc(sizeof(node));
     if (new == NULL)
         return (NULL);
-    printf("Enter data (0 for no node): ");
+    printf("Enter data (-1 for no node): ");
     scanf("%d", &x);
     if (x == -1)
         return (NULL);
