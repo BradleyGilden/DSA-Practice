@@ -13,5 +13,9 @@ int main(void)
     printf("Pre-order is: ");
     pre_order(root);
     printf("\n");
+    in_order(root);
+    printf("\n");
+    post_order(root);
+    printf("\n");
     return (0);
 }

@@ -19,5 +19,7 @@ typedef struct node_s
 
 node *create(void);
 void pre_order(node *root);
+void in_order(node *root);
+void post_order(node *root);
 
 #endif /*BTHEADER_H*/
