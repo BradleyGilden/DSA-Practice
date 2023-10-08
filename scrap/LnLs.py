@@ -44,6 +44,7 @@ class LnLs:
                 ptr = ptr.next
             ptr.next = Node(data)
 
+    @property
     def len(self):
         size = 0
         ptr = self.head
@@ -80,6 +81,21 @@ class LnLs:
                 ptr = ptr.next
             return ptr
 
+    def reverse(self):
+        if self.len <= 1:
+            return
+        behind = None
+        current = self.head
+        ahead = self.head.next
+
+        while ahead is not None:
+            current.next = behind
+            behind = current
+            current = ahead
+            ahead = ahead.next
+        current.next = behind
+        self.head = current
+
 
 if __name__ == '__main__':
     ll = LnLs()
@@ -94,9 +110,11 @@ if __name__ == '__main__':
     ll2.addend(2)
     ll2.tail().next = ll2.head
 
-    print(ll.len())
+    print(ll.len)
 
     print(ll.iscyclic())
     print(ll2.iscyclic())
 
+    ll.display()
+    ll.reverse()
     ll.display()
