@@ -9,7 +9,7 @@ int llen(list_t *head) {
     return count;
 }
 
-void addEnd(list_t *head, int data) {
+void append(list_t *head, int data) {
     if (head == NULL)
         return;
 
@@ -27,7 +27,7 @@ void addEnd(list_t *head, int data) {
     head->next = new;
 }
 
-void addBeginning(list_t **head, int data) {
+void push(list_t **head, int data) {
 
     if (head == NULL) {
         return;
@@ -49,10 +49,10 @@ void addIndex(list_t **head, int data, int index) {
     list_t *ptr = *head;
 
     if (index == 0 || *head == NULL) {
-        addBeginning(head, data);
+        push(head, data);
         return;
     } else if (index == len) {
-        addEnd(*head, data);
+        append(*head, data);
         return;
     } else if (index > len) {
         fprintf(stderr, "index out of range");

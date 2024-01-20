@@ -9,9 +9,9 @@ typedef struct list {
     struct list *next;
 } list_t;
 
-void addEnd(list_t *head, int data);
+void append(list_t *head, int data);
 void lprint(list_t *head);
-void addBeginning(list_t **head, int data);
+void push(list_t **head, int data);
 int lcount(list_t *head);
 void addIndex(list_t **head, int data, int index);
 

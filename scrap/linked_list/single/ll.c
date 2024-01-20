@@ -3,14 +3,14 @@
 int main(void) {
     list_t *head = NULL;
 
-    addBeginning(&head, 5);
-    addBeginning(&head, 6);
-    addBeginning(&head, 7);
-    addBeginning(&head, 8);
+    push(&head, 5);
+    push(&head, 6);
+    push(&head, 7);
+    push(&head, 8);
 
-    addEnd(head, 6);
-    addEnd(head, 7);
-    addEnd(head, 8);
+    append(head, 6);
+    append(head, 7);
+    append(head, 8);
 
     addIndex(&head, 100, 7);
 
