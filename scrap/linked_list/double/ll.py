@@ -8,6 +8,13 @@ if __name__ == '__main__':
     ll.print()
     print("length:", ll.len)
 
+    print()
+    print("adding 100 at index 6:")
     ll.addIndex(100, 6)
     ll.print()
     print("length:", ll.len)
+
+    print()
+    print("swapping head and tail")
+    ll.swap(ll.tail, ll.head)
+    ll.print()

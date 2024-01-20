@@ -98,3 +98,32 @@ class LinkedList:
         new.prev = ptr
         ptr.next.prev = new
         ptr.next = new
+
+    def swap(self, n1, n2):
+        """swaps 2 nodes in the list"""
+        prev = n1.prev
+        next = n1.next
+
+        n1.next = n2.next
+        n1.prev = n2.prev
+        if (n2.next):
+            n2.next.prev = n1
+        if (n2.prev):
+            n2.prev.next = n1
+
+        n2.next = next
+        n2.prev = prev
+        if (prev):
+            prev.next = n2
+        if (next):
+            next.prev = n2
+
+        # rectifying head and tail
+        if (self.head is n1):
+            self.head = n2
+        elif (self.head is n2):
+            self.head = n1
+        if (self.tail is n1):
+            self.tail = n2
+        elif (self.tail is n2):
+            self.tail = n1
