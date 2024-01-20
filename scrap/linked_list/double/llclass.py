@@ -18,7 +18,7 @@ class LinkedList:
             self.tail = None
 
     def push(self, *args) -> None:
-        """adds node at the beginning"""
+        """adds node/s at the beginning"""
         for item in args:
             new = Node(item)
             new.next = self.head
@@ -29,7 +29,7 @@ class LinkedList:
             self.head = new
 
     def append(self, *args) -> None:
-        """adds node at the end"""
+        """adds node/s at the end"""
         for item in args:
             new = Node(item)
             if (self.tail):
@@ -80,6 +80,7 @@ class LinkedList:
         length = self.len
         if (index > length):
             print("Index out of range", file=stderr)
+            return
         elif (index == 0 or self.head is None):
             self.push(data)
             return
@@ -94,4 +95,6 @@ class LinkedList:
             i += 1
         new = Node(data)
         new.next = ptr.next
+        new.prev = ptr
+        ptr.next.prev = new
         ptr.next = new
