@@ -1,4 +1,5 @@
 from sys import stderr
+from typing import Union
 
 
 class Node:
@@ -127,3 +128,65 @@ class LinkedList:
             self.tail = n2
         elif (self.tail is n2):
             self.tail = n1
+
+    # forward reference for return type
+    def clone(self) -> Union['LinkedList', None]:
+        """returns pointer to a clone of current list"""
+        temp = None
+        llcpy = None
+        copy = None
+        if (self.head is None):
+            return None
+        ptr = self.head
+        while (ptr):
+            # if list has not been initiated, initiate with LinkedList()
+            if (not copy):
+                llcpy = LinkedList(ptr.data)
+                # keep track of head
+                copy = llcpy.head
+            else:
+                # if list is established, just create new nodes
+                copy = Node(ptr.data)
+            if (temp):
+                temp.next = copy
+                copy.prev = temp
+            if (ptr.next is None):
+                llcpy.tail = copy
+            temp = copy
+            ptr = ptr.next
+        return llcpy
+
+    def delete(self, index):
+        """delete a node at a specific index in the linked list"""
+        if (self.head is None):
+            return
+        size = self.len
+        if (index >= size or index < 0):
+            print("index out of range", file=stderr)
+        ptr = self.head
+        i = 0
+        data = None
+        while (i <= index):
+            if (i == index):
+                data = ptr.data
+                if (ptr is self.head and ptr is self.tail):
+                    self.head = None
+                    self.tail = None
+                if (ptr is self.tail):
+                    self.tail = ptr.prev
+                if (ptr is self.head):
+                    self.head = ptr.next
+
+                if (ptr.prev):
+                    ptr.prev.next = ptr.next
+                if (ptr.next):
+                    ptr.next.prev = ptr.prev
+                ptr.next = None
+                ptr.prev = None
+                break
+            ptr = ptr.next
+            i += 1
+        return data
+
+    def bubble_sort(self):
+        """implements bubble sort on linked list"""

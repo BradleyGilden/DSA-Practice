@@ -18,3 +18,18 @@ if __name__ == '__main__':
     print("swapping head and tail")
     ll.swap(ll.tail, ll.head)
     ll.print()
+
+    llcopy = ll.clone()
+    print()
+    print("a copied linked list")
+    print("original: ", end="")
+    ll.print()
+    print("copy:     ", end="")
+    llcopy.print()
+
+    print()
+    print("delete node at index")
+    print("original: ", end="")
+    llcopy.print()
+    print(f"deleted {llcopy.delete(2)} at index 2: ", end="")
+    llcopy.print()
