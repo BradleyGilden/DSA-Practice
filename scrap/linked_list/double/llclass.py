@@ -102,22 +102,34 @@ class LinkedList:
 
     def swap(self, n1, n2):
         """swaps 2 nodes in the list"""
-        prev = n1.prev
-        next = n1.next
+        if (n1.next is n2):
+            """"""
+            prev = n1.prev
+            n1.prev = n2
+            n1.next = n2.next
+            n2.prev = prev
+            n2.next = n1
+            if (prev):
+                prev.next = n2
+            if (n1.next):
+                n1.next.prev = n1
+        else:
+            prev = n1.prev
+            next = n1.next
 
-        n1.next = n2.next
-        n1.prev = n2.prev
-        if (n2.next):
-            n2.next.prev = n1
-        if (n2.prev):
-            n2.prev.next = n1
+            n1.next = n2.next
+            n1.prev = n2.prev
+            if (n2.next):
+                n2.next.prev = n1
+            if (n2.prev):
+                n2.prev.next = n1
 
-        n2.next = next
-        n2.prev = prev
-        if (prev):
-            prev.next = n2
-        if (next):
-            next.prev = n2
+            n2.next = next
+            n2.prev = prev
+            if (prev):
+                prev.next = n2
+            if (next):
+                next.prev = n2
 
         # rectifying head and tail
         if (self.head is n1):
@@ -190,3 +202,15 @@ class LinkedList:
 
     def bubble_sort(self):
         """implements bubble sort on linked list"""
+        i = self.head
+        swapped = True
+        while (i and swapped):
+            j = self.head
+            swapped = False
+            while (j.next):
+                if (j.data > j.next.data):
+                    self.swap(j, j.next)
+                    j = j.prev
+                    swapped = True
+                j = j.next
+            i = i.next

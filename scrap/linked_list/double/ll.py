@@ -33,3 +33,8 @@ if __name__ == '__main__':
     llcopy.print()
     print(f"deleted {llcopy.delete(2)} at index 2: ", end="")
     llcopy.print()
+
+    print()
+    print("sorting using bubble sort")
+    ll.bubble_sort()
+    ll.print()
