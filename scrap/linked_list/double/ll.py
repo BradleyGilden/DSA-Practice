@@ -38,3 +38,10 @@ if __name__ == '__main__':
     print("sorting using bubble sort")
     ll.bubble_sort()
     ll.print()
+
+    print("\nSorted Insert of 9")
+    print("before: ", end="")
+    ll.print()
+    print("after:  ", end="")
+    ll.sorted_insert(62)
+    ll.print()

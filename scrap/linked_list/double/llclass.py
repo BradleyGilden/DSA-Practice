@@ -168,7 +168,7 @@ class LinkedList:
             ptr = ptr.next
         return llcpy
 
-    def delete(self, index):
+    def delete(self, index) -> int:
         """delete a node at a specific index in the linked list"""
         if (self.head is None):
             return
@@ -214,3 +214,32 @@ class LinkedList:
                     swapped = True
                 j = j.next
             i = i.next
+
+    def sorted_insert(self, val: int):
+        """inserts a node into a sorted linked list"""
+
+        ptr = self.head
+        node = Node(val)
+
+        # if list is empty
+        if (self.head is None):
+            self.head = node
+            return
+
+        while (ptr):
+            if (node.data <= ptr.data):
+                if (ptr is self.head):
+                    self.head = node
+                node.next = ptr
+                if (ptr.prev):
+                    ptr.prev.next = node
+                node.prev = ptr.prev
+                ptr.prev = node
+                break
+            elif (ptr.next is None and node.data > ptr.data):
+                if (ptr is self.tail):
+                    self.tail = node
+                ptr.next = node
+                node.prev = ptr
+                break
+            ptr = ptr.next
