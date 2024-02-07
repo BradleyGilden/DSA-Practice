@@ -39,6 +39,15 @@ class HashTable:
         else:
             return self.arr[h][0][1]
 
+    def __delitem__(self, key):
+        h = self.__hash(key)
+        if self.arr[h][0][0] is None:
+            return
+        for i, item in enumerate(self.arr[h]):
+            if item[0] == key:
+                del self.arr[h][i]
+                break
+
 
 if __name__ == '__main__':
     h = HashTable()
@@ -49,6 +58,8 @@ if __name__ == '__main__':
     h["doof"] = 22
 
     h["cool"] = 2
+    del h["woah"]
+    del h["doof"]
     print(h.arr)
     print(h["doof"])
     print(h["food"])
