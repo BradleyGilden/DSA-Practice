@@ -2,9 +2,9 @@ from sys import stderr
 
 
 class Node:
-    def __init__(self, data) -> None:
+    def __init__(self, data, next=None) -> None:
         self.data = data
-        self.next = None
+        self.next = next
 
 
 class LinkedList:
@@ -72,3 +72,17 @@ class LinkedList:
         new = Node(data)
         new.next = ptr.next
         ptr.next = new
+
+    def is_cyclic(self):
+        if (self.head is None):
+            return
+
+        slow = self.head
+        fast = self.head.next
+
+        while (fast and fast.next):
+            if (slow == fast):
+                return True
+            slow = slow.next
+            fast = fast.next.next
+        return False
