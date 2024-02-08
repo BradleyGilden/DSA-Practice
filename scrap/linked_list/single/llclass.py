@@ -86,3 +86,18 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
         return False
+
+    def reverse(self):
+        if (self.head is None):
+            return
+
+        c = self.head
+        n = self.head
+        p = None
+
+        while (c):
+            n = n.next
+            c.next = p
+            p = c
+            c = n
+        self.head = p

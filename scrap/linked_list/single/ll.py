@@ -21,3 +21,8 @@ if __name__ == '__main__':
     print(lshort.is_cyclic())
 
     print(ll.is_cyclic())
+
+    print("\nreverse")
+    ll.print()
+    ll.reverse()
+    ll.print()
