@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Implementing a simple bubble sort
+Implementing a simple insertion sort
 
 Author: Bradley Dillion Gilden
 Date: 09-02-2024
@@ -9,9 +9,8 @@ Date: 09-02-2024
 
 
 def insertionsort(arr):
-    """sort an array using the bubble sort algorithm"""
+    """sort an array using the insertion sort algorithm"""
     size = len(arr)
-    # check if a swap was performed during bubbling
 
     for i in range(1, size):
         j = i
