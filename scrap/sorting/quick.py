@@ -31,7 +31,5 @@ def quick_sort(arr, low, high):
 
 if __name__ == '__main__':
     arr = [1, 4, 3, 20, 4, 19, 31, 2, 2]
-
     quick_sort(arr, 0, len(arr) - 1)
-
     print(arr)
