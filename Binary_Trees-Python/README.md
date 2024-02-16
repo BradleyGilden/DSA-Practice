@@ -34,6 +34,9 @@ class Node:
                  D   E
  0  1  2  3  4
 [A][B][C][D][E]
+
+ 1  2  3  4  5
+[A][B][C][D][E]
 ```
 
 left child = $(2\cdot{i}) + 1$ <br>
