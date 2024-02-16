@@ -23,3 +23,27 @@ class Node:
 | Binary Tree          | $CEIL[\log_2{(n + 1)}] - 1$ | $n - 1$          |
 | Full Binary Tree     | $CEIL[\log_2{(n + 1)}] - 1$ | $\dfrac{n-1}{2}$ |
 | Complete Binary Tree | $CEIL[\log_2{(n + 1)}] - 1$ | $\log_2{n}$      |
+
+## Array Reperesentation (complete binary trees)
+
+```
+                     A
+                    / \
+                   B   C
+                  / \
+                 D   E
+ 0  1  2  3  4
+[A][B][C][D][E]
+```
+
+left child = $(2\cdot{i}) + 1$ <br>
+right child = $(2\cdot{i}) + 2$ <br>
+parent = $FLOOR[\dfrac{i - 1}{2}]$
+
+where $i$ is the position of the current node starting from 0
+
+left child = $(2\cdot{i})$ <br>
+right child = $(2\cdot{i}) + 1$ <br>
+parent = $FLOOR[\dfrac{i}{2}]$
+
+where $i$ is the position of the current node starting from 1
