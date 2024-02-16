@@ -15,3 +15,11 @@ if __name__ == '__main__':
     bt.root.right = Node(11, Node(39), Node(74))
 
     bt.print()
+    print("\nPre-Order Traversal")
+    bt.pre_order()
+    print("\nIn-Order Traversal")
+    bt.in_order()
+    print("\nPost-Order Traversal")
+    bt.post_order()
+    print("\nNumber of Nodes")
+    print(bt.count())
