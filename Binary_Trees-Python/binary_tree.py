@@ -69,6 +69,70 @@ class BinaryTree:
         node_count()
         return counter[0]
 
+    def height(self, node, count=0):
+        """ calculate the depth of a node in a binary tree
+        """
+        if node is not None:
+            left_depth = self.height(node.left, count + 1)
+            right_depth = self.height(node.right, count + 1)
+            return max(left_depth, right_depth)
+        else:
+            return count - 1
+
+    def depth(self, start=None):
+        """ calculate the depth of a binary tree
+        depth - distance from root to current node
+        """
+
+        def max_depth(node=self.root, count=0):
+            if node is not None:
+                left_depth = max_depth(node.left, count + 1)
+                right_depth = max_depth(node.right, count + 1)
+                return max(left_depth, right_depth)
+            else:
+                return count - 1
+
+        def depth_current(node=self.root, count=0):
+            if node is not None:
+                if node is start:
+                    return count
+                left_count = depth_current(node.left, count + 1)
+                right_count = depth_current(node.right, count + 1)
+                return max(left_count, right_count)
+            else:
+                return 0
+
+        if start:
+            return depth_current()
+        else:
+            return max_depth()
+
+    def depth2(self, start=None):
+        """ calculate the depth of a binary tree, making use of
+        outer variables
+        """
+        cmax = [0]
+
+        def max_depth(node=self.root, count=0):
+            if node is not None:
+                cmax[0] = count if count > cmax[0] else cmax[0]
+                max_depth(node.left, count + 1)
+                max_depth(node.right, count + 1)
+
+        def depth_current(node=self.root, count=0):
+            if node is not None:
+                if node is start:
+                    cmax[0] = count
+                depth_current(node.left, count + 1)
+                depth_current(node.right, count + 1)
+
+        if start:
+            depth_current()
+        else:
+            max_depth()
+
+        return cmax[0]
+
     def print(self):
         """ prints binary tree at 180 degrees
         """

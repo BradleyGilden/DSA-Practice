@@ -20,9 +20,9 @@ class Node:
 
 |                      | Min Height                  | Max Height       |
 |----------------------|:---------------------------:|:----------------:|
-| Binary Tree          | $CEIL[\log_2{(n + 1)}] - 1$ | $n - 1$          |
-| Full Binary Tree     | $CEIL[\log_2{(n + 1)}] - 1$ | $\dfrac{n-1}{2}$ |
-| Complete Binary Tree | $CEIL[\log_2{(n + 1)}] - 1$ | $\log_2{n}$      |
+| Binary Tree          | $CEIL[\log_2{(n - 1)}] - 1$ | $n - 1$          |
+| Full Binary Tree     | $CEIL[\log_2{(n - 1)}] - 1$ | $\dfrac{n-1}{2}$ |
+| Complete Binary Tree | $CEIL[\log_2{(n - 1)}] - 1$ | $\log_2{n}$      |
 
 ## Array Reperesentation (complete binary trees)
 
