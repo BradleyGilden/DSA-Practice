@@ -60,6 +60,7 @@ class BinaryTree:
         """ counts number of nodes in a binary tree
         """
         counter = [0]
+
         def node_count(node=self.root):
             if (node is not None):
                 counter[0] += 1
