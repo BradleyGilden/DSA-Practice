@@ -56,6 +56,76 @@ class BinaryTree:
         post_order_traversal()
         print()
 
+    def level_order(self):
+        """ performs level-order traversal on a binary tree
+        """
+        height = self.height(self.root)
+
+        def print_level(level, node=self.root, count=0):
+            if node is not None:
+                if level == count:
+                    print(node.data, end=" ")
+                print_level(level, node.left, count + 1)
+                print_level(level, node.right, count + 1)
+
+        for i in range(height + 1):
+            print_level(i)
+        print()
+
+    def rlevel_order(self):
+        """ performs reverse level-order traversal on a binary tree
+        """
+        height = self.height(self.root)
+
+        def print_level(level, node=self.root, count=0):
+            if node is not None:
+                if level == count:
+                    print(node.data, end=" ")
+                print_level(level, node.right, count + 1)
+                print_level(level, node.left, count + 1)
+
+        for i in range(height + 1, -1, -1):
+            print_level(i)
+        print()
+
+    def spiral_order(self):
+        """ performs spiral order traversal on binary tree
+        """
+        height = self.height(self.root)
+
+        def print_level(level, node=self.root, count=0):
+            if node is not None:
+                if level == count:
+                    print(node.data, end=" ")
+                if (level % 2 == 0):
+                    print_level(level, node.right, count + 1)
+                    print_level(level, node.left, count + 1)
+                else:
+                    print_level(level, node.left, count + 1)
+                    print_level(level, node.right, count + 1)
+
+        for i in range(height + 1):
+            print_level(i)
+        print()
+
+    def left_view(self):
+        """ shows left view of the tree
+        """
+        height = self.height(self.root)
+        visited = set()
+
+        def print_level(level, node=self.root, count=0):
+            if node is not None:
+                if level == count and level not in visited:
+                    visited.add(level)
+                    print(node.data, end=" ")
+                print_level(level, node.left, count + 1)
+                print_level(level, node.right, count + 1)
+
+        for i in range(height + 1):
+            print_level(i)
+        print()
+
     def count(self):
         """ counts number of nodes in a binary tree
         """
