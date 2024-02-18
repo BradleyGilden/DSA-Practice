@@ -44,6 +44,15 @@ if __name__ == '__main__':
     bt2.print()
     print("\nLeft view")
     bt2.left_view()
+    print("\nBottom view")
+    bt2.bottom_view()
+
+    print("\nNext node after 11")
+    node = bt2.next_node_same_level(bt2.root.left)
+    print(node.data if node else None)
+    print("\nNext node after 24")
+    node = bt2.next_node_same_level(bt2.root.right.right)
+    print(node.data if node else None)
 
     bt3 = BinaryTree(1)
     bt3.root.right = Node(3)
@@ -59,3 +68,9 @@ if __name__ == '__main__':
                \\
                 6
 """)
+    print("\nRight view")
+    bt3.right_view()
+    print("\nBottom view")
+    bt3.bottom_view()
+    print("\nTop view")
+    bt3.top_view()
