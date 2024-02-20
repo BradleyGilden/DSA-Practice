@@ -241,6 +241,21 @@ class BinaryTree:
 
         return get_next_node()
 
+    def is_complete(self):
+        """checks if a biary tree is complete"""
+        height = self.height(self.root)
+        ncount = [0]
+
+        def level_traverse(level, node=self.root, count=0):
+            if node is not None:
+                if (count == level):
+                    ncount[0] += 1
+                level_traverse(level, node.left, count + 1)
+                level_traverse(level, node.right, count + 1)
+
+        level_traverse(2)
+        print(ncount[0])
+
     def count(self):
         """ counts number of nodes in a binary tree
         """

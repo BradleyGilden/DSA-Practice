@@ -53,6 +53,8 @@ if __name__ == '__main__':
     print("\nNext node after 24")
     node = bt2.next_node_same_level(bt2.root.right.right)
     print(node.data if node else None)
+    print("\nis complete?")
+    bt2.is_complete()
 
     bt3 = BinaryTree(1)
     bt3.root.right = Node(3)
