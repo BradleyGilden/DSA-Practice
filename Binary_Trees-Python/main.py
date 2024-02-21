@@ -35,6 +35,8 @@ if __name__ == '__main__':
     print(bt.depth(bt.root.left.left))
     print("\nheight of 32")
     print(bt.height(bt.root.left))
+    print("\nis complete?")
+    print(bt.is_complete())
 
     bt2 = BinaryTree(1)
     bt2.root.right = Node(32, right=Node(24, right=Node(9)), left=Node(2))
@@ -54,7 +56,7 @@ if __name__ == '__main__':
     node = bt2.next_node_same_level(bt2.root.right.right)
     print(node.data if node else None)
     print("\nis complete?")
-    bt2.is_complete()
+    print(bt2.is_complete())
 
     bt3 = BinaryTree(1)
     bt3.root.right = Node(3)
@@ -76,3 +78,5 @@ if __name__ == '__main__':
     bt3.bottom_view()
     print("\nTop view")
     bt3.top_view()
+    print("\nis complete?")
+    print(bt3.is_complete())

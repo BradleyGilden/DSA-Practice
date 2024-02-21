@@ -6,6 +6,7 @@ This module contains the binary tree class for setting up binary trees
 Author: Bradley Dillion Gilden
 Date: 22-10-2023
 """
+from math import pow
 
 
 class Node:
@@ -244,17 +245,25 @@ class BinaryTree:
     def is_complete(self):
         """checks if a biary tree is complete"""
         height = self.height(self.root)
-        ncount = [0]
+        count = self.count()
 
-        def level_traverse(level, node=self.root, count=0):
+        # check if they have the minimum number of nodes to satisfy a
+        # complete binary tree
+        if count < pow(2, height):
+            return False
+
+        def check_end_nodes(level=height-1, node=self.root, count=0):
             if node is not None:
                 if (count == level):
-                    ncount[0] += 1
-                level_traverse(level, node.left, count + 1)
-                level_traverse(level, node.right, count + 1)
+                    if (node.left is None and node.right):
+                        return False
+                rtree = check_end_nodes(level, node.right, count + 1)
+                ltree = check_end_nodes(level, node.left, count + 1)
+                return ltree & rtree
+            else:
+                return True
 
-        level_traverse(2)
-        print(ncount[0])
+        return check_end_nodes()
 
     def count(self):
         """ counts number of nodes in a binary tree
