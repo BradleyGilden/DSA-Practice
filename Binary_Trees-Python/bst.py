@@ -33,22 +33,26 @@ class BST(BinaryTree):
         self.root = construction(maxint)
 
     def construct_preorder_n_inorder(self, preorder, inorder):
-        """ construct from preorder and in order list
+        """ construct a binary tree from preorder and in order list
         """
-        hashin = {inorder[i]: i for i in range(len(inorder))}
-        i = [0]
+        # create hash of inorder elments as keys and indexes as values
+        inhash = {inorder[i]: i for i in range(len(inorder))}
+        prelen = len(preorder) - 1
+        inlen = len(inorder) - 1
 
-        def construction(preord, inord):
-            if (i[0] == len(inorder) or not inord):
+        def construction(prestart, pre_end, instart, in_end):
+            if (prestart > pre_end or instart > in_end):
                 return None
-            root = Node(preorder[i[0]])
-            rootidx = hashin[root.data] - 1 if hashin[root.data] > 0 else 0
-            l_inorder = inord[rootidx::-1]
-            rootidx = hashin[root.data] + 1
-            r_inorder = inord[rootidx:]
-            i[0] += 1
-            root.left = construction(preord[:len(l_inorder) + 1], l_inorder)
-            root.right = construction(preord[len(l_inorder) + 1:], r_inorder)
+            root = Node(preorder[prestart])
+            # get root index
+            rootidx = inhash[root.data]
+            # get number of elements to the left
+            print(rootidx, root.data)
+            nums_left = rootidx - instart
+            root.left = construction(prestart + 1, prestart + nums_left,
+                                     instart, rootidx - 1)
+            root.right = construction(prestart + nums_left + 1, pre_end,
+                                      rootidx + 1, in_end)
             return root
 
-        self.root = construction(preorder, inorder)
+        self.root = construction(0, prelen, 0, inlen)
