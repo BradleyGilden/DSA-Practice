@@ -81,7 +81,7 @@ class LinkedList:
         fast = self.head.next
 
         while (fast and fast.next):
-            if (slow == fast):
+            if (slow is fast):
                 return True
             slow = slow.next
             fast = fast.next.next
