@@ -182,7 +182,7 @@ class BinaryTree:
         """
         height = self.height(self.root)
         visited_shifts = set()
-        b_view = {}
+        t_view = {}
 
         # the shift will tell us if a horizontal position was visited
         # we use reverse level traversal, although in the same direction
@@ -191,15 +191,15 @@ class BinaryTree:
             if (node is not None):
                 if (level == count and shift not in visited_shifts):
                     visited_shifts.add(shift)
-                    b_view[shift] = node.data
+                    t_view[shift] = node.data
                 level_traversal(level, node.left, count + 1, shift - 1)
                 level_traversal(level, node.right, count + 1, shift + 1)
 
         for i in range(height + 1):
             level_traversal(i)
         # ensure keys are sorted according to shifts when printed
-        for key in sorted(b_view.keys()):
-            print(b_view[key], end=" ")
+        for key in sorted(t_view.keys()):
+            print(t_view[key], end=" ")
         print()
 
     def next_node_same_level(self, node):
