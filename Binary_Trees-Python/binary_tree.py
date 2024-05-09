@@ -21,6 +21,8 @@ class BinaryTree:
     """contains all the methods necessary for working on binary trees"""
     def __init__(self, data=None, left=None, right=None):
         self.root = None
+        self.left = left
+        self.right = right
         if (data):
             self.root = Node(data)
 
