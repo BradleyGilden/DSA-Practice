@@ -16,7 +16,7 @@ def depth_first_search(graph: List[List[int]], adj_list):
 
     def dfs(at):
         if visited[at]:
-            print()
+            print(f"     x-{at}-x")
             return
         print(at, '--->', end="")
         visited[at] = True
