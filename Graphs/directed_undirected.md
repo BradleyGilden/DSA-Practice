@@ -25,15 +25,16 @@ graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### $\color{cyan}{adjacency\ List}$
 
-$\color{cyan}{ \{ }$ <br/>
-$\color{cyan}{\ \ \ \ a: [b,\ c],}$<br/>
-$\color{cyan}{\ \ \ \ b: [d],}$<br/>
-$\color{cyan}{\ \ \ \ c: [e],}$<br/>
-$\color{cyan}{\ \ \ \ d: [\ ],}$<br/>
-$\color{cyan}{\ \ \ \ e: [b],}$<br/>
-$\color{cyan}{\ \ \ \ f: [d],}$<br/>
-$\color{cyan}{ \} }$
-
+```
+{
+  a: [b, c],
+  b: [d],
+  c: [e],
+  d: [],
+  e: [b],
+  f: [d],
+}
+```
 <br/>
 
 ### $\color{orange}{undirected\ graph}$ 
