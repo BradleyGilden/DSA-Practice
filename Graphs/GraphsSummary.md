@@ -4,15 +4,11 @@
 graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (collection of nodes and edges)
 
 <br/>
-<a align="center">
 
-### $\color{cyan}{directed\ graph\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacency\ list}$ 
-
-</p>
+### $\color{cyan}{directed\ graph}$ 
 
 ```mermaid
   block-beta
-  block
   columns 3
   A(("<font color='cyan'>&nbsp;&nbsp;A&nbsp;&nbsp;</font>")) space C(("<font color='cyan'>&nbsp;&nbsp;C&nbsp;&nbsp;</font>"))
   space space space
@@ -25,12 +21,18 @@ graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;
   A-->B
   F-->D
   B-->D
-  end
-  blockArrowId<[" "]>(right)
-  block
-  a["{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\na: [b, c],\nb: [d],&nbsp;&nbsp;&nbsp;&nbsp;\nc: [e],&nbsp;&nbsp;&nbsp;&nbsp;\nd: [],&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\ne: [b],&nbsp;&nbsp;&nbsp;&nbsp;\nf: [d],&nbsp;&nbsp;&nbsp;&nbsp;\n}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"]
-  end
 ```
+
+### $\color{cyan}{adjacency\ List}$
+
+$\color{cyan}{\{}$ <br/>
+$\color{cyan}{\ \ \ \ a: [b,\ c],}$<br/>
+$\color{cyan}{\ \ \ \ b: [d],}$<br/>
+$\color{cyan}{\ \ \ \ a: [e],}$<br/>
+$\color{cyan}{\ \ \ \ a: [\ ],}$<br/>
+$\color{cyan}{\ \ \ \ a: [b],}$<br/>
+$\color{cyan}{\ \ \ \ a: [d],}$<br/>
+$\color{cyan}{\}}$
 
 <br/>
 
