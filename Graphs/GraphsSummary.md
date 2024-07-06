@@ -4,6 +4,10 @@
 graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (collection of nodes and edges)
 
 ```mermaid
+---
+title: Directed Graph
+---
+
   block-beta
   columns 3
   A(("node A")) space C(("node C"))
