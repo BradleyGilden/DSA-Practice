@@ -6,12 +6,12 @@ graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;
 ```mermaid
   block-beta
   columns 3
-  A(("A")) space C(("C"))
+  A(("node A")) space C(("node C"))
   space space space
-  B(("B")) space E(("E"))
+  B(("node B")) space E(("node E"))
   space space space
-  D(("D")) space F(("F"))
-  A-->C
+  D(("node D")) space F(("node F"))
+  A--"edge"-->C
   C-->E
   E-->B
   A-->B
