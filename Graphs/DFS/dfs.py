@@ -5,12 +5,9 @@ see dfs.md for diagrams
 """
 
 
-from typing import List
-
-
-def depth_first_search(graph: List[List[int]], adj_list):
+def depth_first_search(adj_list):
     """prints nodes using dfs"""
-    n = len(graph)
+    n = len(adj_list)
     visited = [False for _ in range(n)]
     start = 0
 
@@ -43,6 +40,4 @@ if __name__ == '__main__':
         [7, 10]
     ]
 
-    graph = [i for i in range(12)]
-
-    depth_first_search(graph, adj_list)
+    depth_first_search(adj_list)
