@@ -33,11 +33,11 @@ graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;
   B(("<font color='orange'>&nbsp;&nbsp;B&nbsp;&nbsp;</font>")) space E(("<font color='orange'>&nbsp;&nbsp;E&nbsp;&nbsp;</font>"))
   space space space
   D(("<font color='orange'>&nbsp;&nbsp;D&nbsp;&nbsp;</font>")) space F(("<font color='orange'>&nbsp;&nbsp;F&nbsp;&nbsp;</font>"))
-  A--"edge"-->C
-  C-->E
-  E-->B
-  A-->B
-  F-->D
-  B-->D
+  A --- C
+  C --- E
+  E --- B
+  A --- B
+  F --- D
+  B --- D
 
 ```
