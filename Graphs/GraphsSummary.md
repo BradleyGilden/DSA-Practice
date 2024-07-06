@@ -4,8 +4,11 @@
 graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (collection of nodes and edges)
 
 <br/>
+<p align="center">
 
 ### $\color{cyan}{directed\ graph\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adjacency\ list}$ 
+
+</p>
 
 ```mermaid
   block-beta
