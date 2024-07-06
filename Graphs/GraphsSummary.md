@@ -25,14 +25,14 @@ graph = $\color{cyan}{nodes}$ + $\color{yellow}{edges}$ &nbsp;&nbsp;&nbsp;&nbsp;
 
 ### $\color{cyan}{adjacency\ List}$
 
-$\color{cyan}{\{}$ <br/>
+$\color{cyan}{ \{ }$ <br/>
 $\color{cyan}{\ \ \ \ a: [b,\ c],}$<br/>
 $\color{cyan}{\ \ \ \ b: [d],}$<br/>
-$\color{cyan}{\ \ \ \ a: [e],}$<br/>
-$\color{cyan}{\ \ \ \ a: [\ ],}$<br/>
-$\color{cyan}{\ \ \ \ a: [b],}$<br/>
-$\color{cyan}{\ \ \ \ a: [d],}$<br/>
-$\color{cyan}{\}}$
+$\color{cyan}{\ \ \ \ c: [e],}$<br/>
+$\color{cyan}{\ \ \ \ d: [\ ],}$<br/>
+$\color{cyan}{\ \ \ \ e: [b],}$<br/>
+$\color{cyan}{\ \ \ \ f: [d],}$<br/>
+$\color{cyan}{ \} }$
 
 <br/>
 
