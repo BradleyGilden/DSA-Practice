@@ -3,7 +3,11 @@ from typing import Iterable
 
 class Stack(list):
     def __init__(self, object: Iterable):
-        super().__init__(object)
+        obj = object
+        # check if object is iterable
+        if not hasattr(object, '__iter__'):
+            obj = [object]
+        super().__init__(obj)
 
     def push(self, object):
         self.append(object)
@@ -25,4 +29,7 @@ class Queue:
         return self.__queue.pop()
 
     def __str__(self):
-        return f"[{', '.join(map(str, self.__queue))}]"
+        return str(self.__queue)
+
+    def __len__(self):
+        return len(self.__queue)
