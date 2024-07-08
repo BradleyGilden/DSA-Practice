@@ -66,11 +66,11 @@ start: F<br/>end: K
 ```mermaid
   flowchart LR
 
-  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
+  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- |cycle| j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
 
-  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node
+  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- |cycle| k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node
 
-  k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
+  k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- |cycle| j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
 
   k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- l(("<font>&nbsp;&nbsp;l&nbsp;&nbsp;</font>")):::node
 
