@@ -16,13 +16,13 @@ def buildGraph(edge_list) -> dict:
 
 def undirectedPath(edges, src, dst):
     graph = buildGraph(edges)
-    visited = {k: False for k in graph.keys()}
+    visited = set()
 
     def hasPath(current):
-        if (visited[current]):
+        if (current in visited):
             return
         # visited node
-        visited[current] = True
+        visited.add(current)
         if current == dst:
             return True
 
