@@ -18,8 +18,13 @@ start: A<br/>end: F
   D-->F
   B-->D
 
-  style A fill:lime,stroke:black,stroke-width:4px,color:black
-  style F fill:red,stroke:orange,stroke-width:4px,color:white
+  style A fill:black,stroke:lime,stroke-width:4px,color:lime
+  style F fill:black,stroke:red,stroke-width:4px,color:red
+
+  style B fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style C fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style D fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style E fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
 
 `DFS: a,b,d,f,c,e`
@@ -47,6 +52,11 @@ start: F<br/>end: K
   J-->I
   I-->K
 
-  style F fill:lime,stroke:black,stroke-width:4px,color:black
-  style K fill:red,stroke:orange,stroke-width:4px,color:white
+  style F fill:black,stroke:lime,stroke-width:4px,color:lime
+  style K fill:black,stroke:red,stroke-width:4px,color:red
+
+  style G fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style H fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style I fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style J fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
