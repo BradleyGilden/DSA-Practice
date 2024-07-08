@@ -1,5 +1,5 @@
 """
-DEPTH FIRST SEARCH (using Graph 2 from the README)
+Find if path (directed) exists (using Graph 2 from the README)
 """
 from custom_structs import Stack, Queue  # noqa
 

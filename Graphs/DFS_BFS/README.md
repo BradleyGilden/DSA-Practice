@@ -52,11 +52,31 @@ start: F<br/>end: K
   J-->I
   I-->K
 
-  style F fill:black,stroke:lime,stroke-width:4px,color:lime
-  style K fill:black,stroke:red,stroke-width:4px,color:red
+  style F fill:black,stroke:cyan,stroke-width:4px,color:cyan
+  style K fill:black,stroke:cyan,stroke-width:4px,color:cyan
 
   style G fill:black,stroke:cyan,stroke-width:4px,color:cyan
   style H fill:black,stroke:cyan,stroke-width:4px,color:cyan
   style I fill:black,stroke:cyan,stroke-width:4px,color:cyan
   style J fill:black,stroke:cyan,stroke-width:4px,color:cyan
+```
+
+### Graph 3
+
+```mermaid
+  flowchart LR
+
+  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
+
+  i(("<font>&nbsp;&nbsp;i&nbsp;&nbsp;</font>")):::node --- k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node
+
+  k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- j(("<font>&nbsp;&nbsp;j&nbsp;&nbsp;</font>")):::node
+
+  k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- l(("<font>&nbsp;&nbsp;l&nbsp;&nbsp;</font>")):::node
+
+  k(("<font>&nbsp;&nbsp;k&nbsp;&nbsp;</font>")):::node --- m(("<font>&nbsp;&nbsp;m&nbsp;&nbsp;</font>")):::node
+  
+  o(("<font>&nbsp;&nbsp;o&nbsp;&nbsp;</font>")):::node --- n(("<font>&nbsp;&nbsp;n&nbsp;&nbsp;</font>")):::node
+  
+  classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
