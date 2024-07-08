@@ -25,3 +25,4 @@ if __name__ == '__main__':
         'k': []
     }
     print(hasPath(graph, 'k', 'f'))
+    print(hasPath(graph, 'i', 'g'))
