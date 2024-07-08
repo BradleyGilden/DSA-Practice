@@ -3,6 +3,9 @@ Find if path (undirected) exists (using Graph 3 from the README)
 """
 
 
+from custom_structs import Queue
+
+
 def buildGraph(edge_list) -> dict:
     """builds a graph from an edge_list"""
     edge_list_flat = set([j for i in edge_list for j in i])
@@ -14,11 +17,11 @@ def buildGraph(edge_list) -> dict:
     return graph
 
 
-def undirectedPath(edges, src, dst):
+def undirectedPath(edges, src, dst, dfs=True):
     graph = buildGraph(edges)
     visited = set()
 
-    def hasPath(current):
+    def hasPathDFS(current):
         if (current in visited):
             return
         # visited node
@@ -27,12 +30,27 @@ def undirectedPath(edges, src, dst):
             return True
 
         for node in graph[current]:
-            if hasPath(node):
+            if hasPathDFS(node):
                 return True
 
         return False
 
-    return hasPath(src)
+    def hasPathBFS(src):
+        queue = Queue(src)
+        visited = set()
+
+        while (len(queue)):
+            current = queue.dequeue()
+            visited.add(current)
+            if current == dst:
+                return True
+            for node in graph[current]:
+                if node not in visited:
+                    queue.enqueue(node)
+
+        return False
+
+    return hasPathDFS(src) if dfs else hasPathBFS(src)
 
 
 if __name__ == '__main__':
@@ -48,3 +66,7 @@ if __name__ == '__main__':
     print(undirectedPath(edge_list, 'i', 'm'))
     print(undirectedPath(edge_list, 'k', 'o'))
     print(undirectedPath(edge_list, 'n', 'o'))
+    print()
+    print(undirectedPath(edge_list, 'i', 'm', False))
+    print(undirectedPath(edge_list, 'k', 'o', False))
+    print(undirectedPath(edge_list, 'n', 'o', False))
