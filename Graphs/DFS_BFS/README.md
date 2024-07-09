@@ -99,3 +99,18 @@ start: F<br/>end: K
 
   classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
+
+### Graph 5
+```mermaid
+  flowchart LR
+  n1(("<font>&nbsp;&nbsp;1&nbsp;&nbsp;</font>")) --- n0(("<font>&nbsp;&nbsp;0&nbsp;&nbsp;</font>"))
+  n0(("<font>&nbsp;&nbsp;0&nbsp;&nbsp;</font>")) --- n5(("<font>&nbsp;&nbsp;5&nbsp;&nbsp;</font>"))
+  n0(("<font>&nbsp;&nbsp;0&nbsp;&nbsp;</font>")) --- n8(("<font>&nbsp;&nbsp;8&nbsp;&nbsp;</font>"))
+  n5(("<font>&nbsp;&nbsp;5&nbsp;&nbsp;</font>")) --- n8(("<font>&nbsp;&nbsp;8&nbsp;&nbsp;</font>"))
+
+  n4(("<font>&nbsp;&nbsp;4&nbsp;&nbsp;</font>")) --- n2(("<font>&nbsp;&nbsp;2&nbsp;&nbsp;</font>"))
+  n3(("<font>&nbsp;&nbsp;3&nbsp;&nbsp;</font>")) --- n2(("<font>&nbsp;&nbsp;2&nbsp;&nbsp;</font>"))
+  n3(("<font>&nbsp;&nbsp;3&nbsp;&nbsp;</font>")) --- n4(("<font>&nbsp;&nbsp;4&nbsp;&nbsp;</font>"))
+
+  classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
+```
