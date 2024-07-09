@@ -80,3 +80,22 @@ start: F<br/>end: K
   
   classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
+
+### Graph 4
+```mermaid
+  flowchart LR
+
+  n1(("<font>&nbsp;&nbsp;1&nbsp;&nbsp;</font>")) --- n2(("<font>&nbsp;&nbsp;2&nbsp;&nbsp;</font>"))
+
+  n6(("<font>&nbsp;&nbsp;6&nbsp;&nbsp;</font>")) --- n4(("<font>&nbsp;&nbsp;4&nbsp;&nbsp;</font>"))
+
+  n6(("<font>&nbsp;&nbsp;6&nbsp;&nbsp;</font>")) --- n5(("<font>&nbsp;&nbsp;5&nbsp;&nbsp;</font>"))
+
+  n6(("<font>&nbsp;&nbsp;6&nbsp;&nbsp;</font>")) --- n7(("<font>&nbsp;&nbsp;7&nbsp;&nbsp;</font>"))
+
+  n6(("<font>&nbsp;&nbsp;6&nbsp;&nbsp;</font>")) --- n8(("<font>&nbsp;&nbsp;8&nbsp;&nbsp;</font>"))
+
+  n3(("<font>&nbsp;&nbsp;3&nbsp;&nbsp;</font>"))
+
+  classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
+```
