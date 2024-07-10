@@ -114,3 +114,26 @@ start: F<br/>end: K
 
   classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
 ```
+
+### Graph 6
+
+#### Start: W
+#### End: Z
+#### Shortest Path: 2 &nbsp; &nbsp; &nbsp; {w, v, z}
+
+```mermaid
+  flowchart LR
+
+  w(("<font>&nbsp;&nbsp;W&nbsp;&nbsp;</font>")) --- x(("<font>&nbsp;&nbsp;X&nbsp;&nbsp;</font>"))
+
+  x --- y(("<font>&nbsp;&nbsp;Y&nbsp;&nbsp;</font>"))
+  y --- z(("<font>&nbsp;&nbsp;Z&nbsp;&nbsp;</font>"))
+  z:::finish --- v(("<font>&nbsp;&nbsp;V&nbsp;&nbsp;</font>"))
+  v --- w:::start
+
+  classDef node fill:black,stroke:cyan,stroke-width:4px,color:cyan
+
+  classDef start fill:black,stroke:lime,stroke-width:4px,color:lime
+
+  classDef finish fill:black,stroke:red,stroke-width:4px,color:red
+```
