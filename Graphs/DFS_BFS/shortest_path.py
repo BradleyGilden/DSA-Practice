@@ -45,4 +45,4 @@ if __name__ == '__main__':
         ['y', 'x']
     ]
 
-    print(shortestPath(edge_list, 'w', 'v'))
+    print(shortestPath(edge_list, 'w', 'z'))
