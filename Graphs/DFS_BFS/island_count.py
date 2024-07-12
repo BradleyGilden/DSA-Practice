@@ -4,19 +4,19 @@ count number of islands (using Graph 6 from the README)
 from typing import List, Tuple
 
 
-def get_neighbours(numRows, numCols, index: Tuple[int]) -> List[Tuple[int]]:
+def get_neighbours(numRows, numCols, location: Tuple[int]) -> List[Tuple[int]]:
     """creates a list of neighbour co-ordinates"""
 
     neighbours = []
 
-    if (index[0] - 1 > -1):
-        neighbours.append((index[0] - 1, index[1]))
-    if (index[0] + 1 < numRows):
-        neighbours.append((index[0] + 1, index[1]))
-    if (index[1] - 1 > -1):
-        neighbours.append((index[0], index[1] - 1))
-    if (index[1] + 1 < numCols):
-        neighbours.append((index[0], index[1] + 1))
+    if (location[0] - 1 > -1):
+        neighbours.append((location[0] - 1, location[1]))
+    if (location[0] + 1 < numRows):
+        neighbours.append((location[0] + 1, location[1]))
+    if (location[1] - 1 > -1):
+        neighbours.append((location[0], location[1] - 1))
+    if (location[1] + 1 < numCols):
+        neighbours.append((location[0], location[1] + 1))
 
     return neighbours
 
