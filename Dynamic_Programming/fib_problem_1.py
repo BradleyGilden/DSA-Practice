@@ -8,18 +8,15 @@ sequence:
 """
 
 
-def fib(n, memory={}):
+def fib(n, memo={}):
     """return the n-th number of a fib sequence"""
-
+    if memo.get(n):
+        return memo[n]
     if n < 3:
         return 1
-
     # using dictionary to keep track of previous calls so that we don't explore unecessary paths
-    fib1 = fib(n - 1, memory) if not memory.get(n - 1) else memory[n - 1]
-    fib2 = fib(n - 2, memory) if not memory.get(n - 2) else memory[n - 2]
-    val = fib1 + fib2
-    memory[n] = val
-    return val
+    memo[n] = fib(n - 1) + fib(n - 2)
+    return memo[n]
 
 
 if __name__ == '__main__':
