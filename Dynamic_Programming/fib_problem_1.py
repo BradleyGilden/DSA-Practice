@@ -14,7 +14,8 @@ def fib(n, memo={}):
         return memo[n]
     if n < 3:
         return 1
-    # using dictionary to keep track of previous calls so that we don't explore unecessary paths
+    # using dictionary to keep track of previous calls so that
+    # we don't explore unecessary paths
     memo[n] = fib(n - 1) + fib(n - 2)
     return memo[n]
 
