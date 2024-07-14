@@ -9,7 +9,7 @@ In how many ways can you travel to the goal on a grid with dimensions m * n?
 def gridTraveler(col, row, memo={}) -> int:
     """traverses grid with down and right directions"""
     # we use n - down and m - right because grid is shrinking
-    gsize = ''.join(sorted(f"{col}{row}"))
+    gsize = ','.join(sorted(f"{col}{row}"))
 
     if memo.get(gsize):
         return memo[gsize]
