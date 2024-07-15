@@ -32,3 +32,15 @@ def gridTraveler(col, row, memo={}) -> int:
 if __name__ == '__main__':
     print(gridTraveler(4, 3))
     print(gridTraveler(100, 50))
+
+"""
+brute force version
+------------------
+O(2^(n + m)) time
+O(n + m) space
+
+memoized version
+-----------------
+O(m * n) time
+O(n + m) space
+"""
