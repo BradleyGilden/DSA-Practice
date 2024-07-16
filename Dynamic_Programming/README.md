@@ -12,5 +12,8 @@ This contains practice problems from Alvins dynamic programming course
      * add a new base case to return memo object
      * store return values into the memo
 
+* canSum -> *Descision Problem*
+* howSum -> *Combinatoric Problem*
+* bestSum -> *Optimization Problem*
 
 * ### Part 2: Tabulation
