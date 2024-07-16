@@ -25,9 +25,8 @@ def howSum(targetSum, numbers, memo=None):
         remainder = targetSum - n
         combination = howSum(remainder, numbers, memo)
         if combination is not None:
-            combination.append(n)
-            memo[targetSum] = combination.copy()
-            return combination
+            memo[targetSum] = [*combination, n]
+            return memo[targetSum]
 
     memo[targetSum] = None
     return None
@@ -40,3 +39,19 @@ if __name__ == '__main__':
     print(howSum(8, [2, 3, 5]))
     print(howSum(300, [7, 14]))
     print(howSum(315, [25, 2, 3]))
+
+
+"""
+m = target sum
+n = array length
+
+Brute Force Solution
+--------------------
+O(n^m * m) time
+O(m) space
+
+Brute Force Solution
+--------------------
+O(n * m^2) time
+O(m^2) space
+"""
