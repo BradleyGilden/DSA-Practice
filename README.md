@@ -5,9 +5,14 @@
 
 ## List of DSA to tackle:
 
-* Singly Linked Lists
-* Doubly Linked Lists
-* Hash Tables
-* Graphs
-* Binary Search Trees
-* Search Algorithms
+* Hash Tables  ✅
+* Singly Linked Lists  ✅
+* Doubly Linked Lists  ✅
+* Trees
+  * Binary Trees ✅
+  * Binary Search Trees ✅
+  * AVL Trees
+* Search Algorithms  ✅
+* Dyanmic Programming  ✅
+* Graphs ✅
+* Sorting Algorithms  ✅
