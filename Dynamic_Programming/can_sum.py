@@ -38,3 +38,19 @@ if __name__ == '__main__':
     print(canSum(7, [2, 4]))  # false
     print(canSum(8, [2, 3, 5]))  # true
     print(canSum(300, [7, 14]))  # false
+
+
+"""
+m = target sum
+n = array length
+
+Brute Force Solution
+--------------------
+O(n^m) time
+O(m) space
+
+Brute Force Solution
+--------------------
+O(n * m) time
+O(m) space
+"""
