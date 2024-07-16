@@ -20,6 +20,9 @@ def howSum(targetSum, numbers, memo=None):
     if targetSum < 0:
         return None
 
+    # initialize targetSum to None
+    memo[targetSum] = None
+
     for n in numbers:
         remainder = targetSum - n
         combination = howSum(remainder, numbers, memo)
@@ -27,7 +30,7 @@ def howSum(targetSum, numbers, memo=None):
             newcomb = [*combination, n]
             # check if targetSum has been memoized
             # if not, apply a new combination related to the target sub
-            if targetSum not in memo:
+            if memo[targetSum] is None:
                 memo[targetSum] = newcomb
             # if it has been memoized, determine the smallest combination
             else:
@@ -35,8 +38,6 @@ def howSum(targetSum, numbers, memo=None):
                                    len(newcomb) < len(memo[targetSum])
                                    else memo[targetSum])
 
-    if targetSum not in memo:
-        memo[targetSum] = None
     return memo[targetSum]
 
 
@@ -47,3 +48,19 @@ if __name__ == '__main__':
     print(howSum(8, [2, 3, 5]))
     print(howSum(300, [7, 14]))
     print(howSum(315, [25, 2, 3]))
+
+
+"""
+m = target sum
+n = array length
+
+Brute Force Solution
+--------------------
+O(n^m * m) time
+O(m) space
+
+Brute Force Solution
+--------------------
+O(n * m^2) time
+O(m^2) space
+"""
