@@ -1,4 +1,5 @@
 ### grid path 1
+
 ```mermaid
 block-beta
 columns 3
@@ -17,8 +18,8 @@ class a,b,c,f path
 
 ```
 
-
 ### grid path 2
+
 ```mermaid
 block-beta
 columns 3
@@ -38,6 +39,7 @@ class a,b,e,f path
 ```
 
 ### grid path 1
+
 ```mermaid
 block-beta
 columns 3
@@ -56,4 +58,4 @@ class a,d,e,f path
 
 ```
 
-### Count: 3 paths 
+### Count: 3 paths
