@@ -22,10 +22,8 @@ def canConstruct(target, wordbank, memo=None):
         return True
     
     for word in wordbank:
-        newTarget = target
         if target.startswith(word):
-            newTarget = target[len(word):]
-            if canConstruct(newTarget, wordbank, memo):
+            if canConstruct(target[len(word):], wordbank, memo):
                 memo[target] = True
                 return True
 
