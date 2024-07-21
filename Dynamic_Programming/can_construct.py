@@ -10,8 +10,7 @@ You may reuse elements of wordBank as many times as needed.
 
 
 def canConstruct(target, wordbank, memo=None):
-    """given an array of words in a wordbank, try construct the target word
-    """
+    """given an array of words in a wordbank, try construct the target word"""
     if memo is None:
         memo = {}
 
@@ -20,10 +19,10 @@ def canConstruct(target, wordbank, memo=None):
 
     if not target:
         return True
-    
+
     for word in wordbank:
         if target.startswith(word):
-            if canConstruct(target[len(word):], wordbank, memo):
+            if canConstruct(target[len(word) :], wordbank, memo):
                 memo[target] = True
                 return True
 
@@ -31,16 +30,25 @@ def canConstruct(target, wordbank, memo=None):
     return False
 
 
-if __name__ == '__main__':
-    print(canConstruct('abcdef', ['ab', 'abc', 'cd', 'def', 'abcd']))  # true
-    print(canConstruct('abcabdef', ['ab', 'abc', 'cd', 'def', 'abcd']))  # true
-    print(canConstruct('abcabbdef', ['ab', 'abc', 'cd', 'def', 'abcd']))  # false
-    print(canConstruct('skateboard', ['bo', 'ate', 'rd', 't', 'sk', 'boar']))  # false
-    print(canConstruct('eeeeeeeeeeeeeeeeeeeeeeeeeeeeef', [
-        'e',
-        'ee',
-        'eee',
-        'eeee',
-        'eeeee',
-        'eeeeee',
-    ])) # false
+if __name__ == "__main__":
+    print(canConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]))  # true
+    print(canConstruct("abcabdef", ["ab", "abc", "cd", "def", "abcd"]))  # true
+    print(
+        canConstruct("abcabbdef", ["ab", "abc", "cd", "def", "abcd"])
+    )  # false
+    print(
+        canConstruct("skateboard", ["bo", "ate", "rd", "t", "sk", "boar"])
+    )  # false
+    print(
+        canConstruct(
+            "eeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
+            [
+                "e",
+                "ee",
+                "eee",
+                "eeee",
+                "eeeee",
+                "eeeeee",
+            ],
+        )
+    )  # false
