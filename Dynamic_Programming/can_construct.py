@@ -52,3 +52,18 @@ if __name__ == "__main__":
             ],
         )
     )  # false
+
+"""
+m = target length
+n = wordbank length
+
+Brute Force Solution
+--------------------
+O(n^m * m) time
+O(m^2) space
+
+Brute Force Solution
+--------------------
+O(n * m^2) time
+O(m^2) space
+"""
