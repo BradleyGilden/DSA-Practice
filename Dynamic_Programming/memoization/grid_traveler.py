@@ -12,7 +12,7 @@ def gridTraveler(col, row, memo=None) -> int:
 
     if memo is None:
         memo = {}
-    gsize = ','.join(f"{col}{row}")
+    gsize = ','.join(sorted([str(col), str(row)]))
 
     if memo.get(gsize):
         return memo[gsize]
