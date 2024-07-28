@@ -12,6 +12,7 @@ def gridTraveler(col, row):
 
     for i in range(row + 1):
         for j in range(col + 1):
+            # add current value to right and bottom
             if j < col:
                 table[i][j + 1] += table[i][j]
             if i < row:
