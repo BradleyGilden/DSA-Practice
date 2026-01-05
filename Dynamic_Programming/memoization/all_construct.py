@@ -8,7 +8,9 @@ should represent one combination that constructs the `target`.
 
 You may reuse elements of `wordBank` as many times as needed.
 """
+
 from pprint import pprint
+
 
 def allConstruct(target, wordbank, memo=None):
     """Given an array of words in a wordbank, try to construct the target word."""
@@ -24,7 +26,7 @@ def allConstruct(target, wordbank, memo=None):
     comb_list = []
     for word in wordbank:
         if target.startswith(word):
-            suffix = target[len(word):]
+            suffix = target[len(word) :]
             suffix_ways = allConstruct(suffix, wordbank, memo)
             target_ways = [[word] + way for way in suffix_ways]
             comb_list.extend(target_ways)
